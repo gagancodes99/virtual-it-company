@@ -1,0 +1,794 @@
+{
+  "project": "Virtual IT Company Platform",
+  "version": "1.0.0",
+  "created": "2025-05-27",
+  "total_tasks": 85,
+  "categories": {
+    "DONE": {
+      "count": 21,
+      "tasks": [
+        {
+          "id": "UI-001",
+          "title": "Setup Next.js 15 with TypeScript",
+          "category": "Frontend",
+          "status": "DONE",
+          "effort": "2h"
+        },
+        {
+          "id": "UI-002",
+          "title": "Implement Tailwind CSS and Shadcn/ui",
+          "category": "Frontend",
+          "status": "DONE",
+          "effort": "3h"
+        },
+        {
+          "id": "UI-003",
+          "title": "Create dashboard layout components",
+          "category": "Frontend",
+          "status": "DONE",
+          "effort": "4h"
+        },
+        {
+          "id": "UI-004",
+          "title": "Build agent management UI",
+          "category": "Frontend",
+          "status": "DONE",
+          "effort": "6h"
+        },
+        {
+          "id": "AUTH-001",
+          "title": "Setup NextAuth with MongoDB adapter",
+          "category": "Authentication",
+          "status": "DONE",
+          "effort": "4h"
+        },
+        {
+          "id": "AUTH-002",
+          "title": "Configure OAuth providers",
+          "category": "Authentication",
+          "status": "DONE",
+          "effort": "2h"
+        },
+        {
+          "id": "AUTH-003",
+          "title": "Implement role-based access control",
+          "category": "Authentication",
+          "status": "DONE",
+          "effort": "3h"
+        },
+        {
+          "id": "DB-001",
+          "title": "Create User model with roles",
+          "category": "Database",
+          "status": "DONE",
+          "effort": "2h"
+        },
+        {
+          "id": "DB-002",
+          "title": "Create Tenant model for multi-tenancy",
+          "category": "Database",
+          "status": "DONE",
+          "effort": "2h"
+        },
+        {
+          "id": "DB-003",
+          "title": "Create Project model with lifecycle",
+          "category": "Database",
+          "status": "DONE",
+          "effort": "3h"
+        },
+        {
+          "id": "DB-004",
+          "title": "Create AIAgent model with LLM config",
+          "category": "Database",
+          "status": "DONE",
+          "effort": "4h"
+        },
+        {
+          "id": "API-001",
+          "title": "Setup tRPC with Next.js",
+          "category": "API",
+          "status": "DONE",
+          "effort": "3h"
+        },
+        {
+          "id": "API-002",
+          "title": "Create agent router",
+          "category": "API",
+          "status": "DONE",
+          "effort": "2h"
+        },
+        {
+          "id": "API-003",
+          "title": "Create project router",
+          "category": "API",
+          "status": "DONE",
+          "effort": "2h"
+        },
+        {
+          "id": "API-004",
+          "title": "Create user and tenant routers",
+          "category": "API",
+          "status": "DONE",
+          "effort": "3h"
+        },
+        {
+          "id": "STATE-001",
+          "title": "Setup Zustand stores",
+          "category": "State Management",
+          "status": "DONE",
+          "effort": "2h"
+        },
+        {
+          "id": "STATE-002",
+          "title": "Implement auth store",
+          "category": "State Management",
+          "status": "DONE",
+          "effort": "2h"
+        },
+        {
+          "id": "STATE-003",
+          "title": "Implement UI store",
+          "category": "State Management",
+          "status": "DONE",
+          "effort": "1h"
+        },
+        {
+          "id": "INFRA-001",
+          "title": "Create Docker compose for MongoDB",
+          "category": "Infrastructure",
+          "status": "DONE",
+          "effort": "2h"
+        },
+        {
+          "id": "INFRA-002",
+          "title": "Setup Redis container",
+          "category": "Infrastructure",
+          "status": "DONE",
+          "effort": "1h"
+        },
+        {
+          "id": "INFRA-003",
+          "title": "Configure environment variables",
+          "category": "Infrastructure",
+          "status": "DONE",
+          "effort": "1h"
+        }
+      ]
+    },
+    "TODO": {
+      "count": 64,
+      "priority_order": [
+        {
+          "id": "AI-001",
+          "title": "Create LLM client interface",
+          "category": "AI Core",
+          "status": "TODO",
+          "priority": "P0",
+          "effort": "4h",
+          "dependencies": [],
+          "week": 1
+        },
+        {
+          "id": "AI-002",
+          "title": "Implement Ollama integration",
+          "category": "AI Core",
+          "status": "TODO",
+          "priority": "P0",
+          "effort": "6h",
+          "dependencies": ["AI-001"],
+          "week": 1
+        },
+        {
+          "id": "AI-003",
+          "title": "Add OpenAI client implementation",
+          "category": "AI Core",
+          "status": "TODO",
+          "priority": "P0",
+          "effort": "4h",
+          "dependencies": ["AI-001"],
+          "week": 1
+        },
+        {
+          "id": "AI-004",
+          "title": "Add Anthropic Claude client",
+          "category": "AI Core",
+          "status": "TODO",
+          "priority": "P0",
+          "effort": "4h",
+          "dependencies": ["AI-001"],
+          "week": 1
+        },
+        {
+          "id": "AI-005",
+          "title": "Build multi-LLM router",
+          "category": "AI Core",
+          "status": "TODO",
+          "priority": "P0",
+          "effort": "8h",
+          "dependencies": ["AI-002", "AI-003", "AI-004"],
+          "week": 1
+        },
+        {
+          "id": "AI-006",
+          "title": "Implement cost tracking system",
+          "category": "AI Core",
+          "status": "TODO",
+          "priority": "P0",
+          "effort": "6h",
+          "dependencies": ["AI-005"],
+          "week": 1
+        },
+        {
+          "id": "AI-007",
+          "title": "Create prompt template system",
+          "category": "AI Core",
+          "status": "TODO",
+          "priority": "P0",
+          "effort": "4h",
+          "dependencies": ["AI-001"],
+          "week": 1
+        },
+        {
+          "id": "AGENT-001",
+          "title": "Create base agent executor class",
+          "category": "Agent System",
+          "status": "TODO",
+          "priority": "P0",
+          "effort": "6h",
+          "dependencies": ["AI-005"],
+          "week": 2
+        },
+        {
+          "id": "AGENT-002",
+          "title": "Implement task processing logic",
+          "category": "Agent System",
+          "status": "TODO",
+          "priority": "P0",
+          "effort": "8h",
+          "dependencies": ["AGENT-001"],
+          "week": 2
+        },
+        {
+          "id": "AGENT-003",
+          "title": "Build agent-to-database mapping",
+          "category": "Agent System",
+          "status": "TODO",
+          "priority": "P0",
+          "effort": "4h",
+          "dependencies": ["AGENT-001"],
+          "week": 2
+        },
+        {
+          "id": "AGENT-004",
+          "title": "Create specialized agent classes",
+          "category": "Agent System",
+          "status": "TODO",
+          "priority": "P0",
+          "effort": "8h",
+          "dependencies": ["AGENT-001"],
+          "week": 2
+        },
+        {
+          "id": "AGENT-005",
+          "title": "Implement error handling and retry",
+          "category": "Agent System",
+          "status": "TODO",
+          "priority": "P0",
+          "effort": "6h",
+          "dependencies": ["AGENT-002"],
+          "week": 2
+        },
+        {
+          "id": "AGENT-006",
+          "title": "Add performance monitoring",
+          "category": "Agent System",
+          "status": "TODO",
+          "priority": "P1",
+          "effort": "4h",
+          "dependencies": ["AGENT-002"],
+          "week": 2
+        },
+        {
+          "id": "WF-001",
+          "title": "Add n8n to Docker compose",
+          "category": "Workflow",
+          "status": "TODO",
+          "priority": "P0",
+          "effort": "2h",
+          "dependencies": [],
+          "week": 3
+        },
+        {
+          "id": "WF-002",
+          "title": "Create n8n webhook endpoints",
+          "category": "Workflow",
+          "status": "TODO",
+          "priority": "P0",
+          "effort": "4h",
+          "dependencies": ["WF-001"],
+          "week": 3
+        },
+        {
+          "id": "WF-003",
+          "title": "Setup basic LangGraph integration",
+          "category": "Workflow",
+          "status": "TODO",
+          "priority": "P0",
+          "effort": "8h",
+          "dependencies": [],
+          "week": 3
+        },
+        {
+          "id": "WF-004",
+          "title": "Implement project state machine",
+          "category": "Workflow",
+          "status": "TODO",
+          "priority": "P0",
+          "effort": "8h",
+          "dependencies": ["WF-003"],
+          "week": 3
+        },
+        {
+          "id": "WF-005",
+          "title": "Create Redis task queue",
+          "category": "Workflow",
+          "status": "TODO",
+          "priority": "P0",
+          "effort": "6h",
+          "dependencies": [],
+          "week": 3
+        },
+        {
+          "id": "WF-006",
+          "title": "Build workflow templates",
+          "category": "Workflow",
+          "status": "TODO",
+          "priority": "P1",
+          "effort": "8h",
+          "dependencies": ["WF-002", "WF-004"],
+          "week": 3
+        },
+        {
+          "id": "POOL-001",
+          "title": "Create agent pool manager",
+          "category": "Agent Pool",
+          "status": "TODO",
+          "priority": "P0",
+          "effort": "6h",
+          "dependencies": ["AGENT-001"],
+          "week": 4
+        },
+        {
+          "id": "POOL-002",
+          "title": "Implement task distribution logic",
+          "category": "Agent Pool",
+          "status": "TODO",
+          "priority": "P0",
+          "effort": "8h",
+          "dependencies": ["POOL-001", "WF-005"],
+          "week": 4
+        },
+        {
+          "id": "POOL-003",
+          "title": "Add workload balancing",
+          "category": "Agent Pool",
+          "status": "TODO",
+          "priority": "P1",
+          "effort": "6h",
+          "dependencies": ["POOL-002"],
+          "week": 4
+        },
+        {
+          "id": "POOL-004",
+          "title": "Build inter-agent communication",
+          "category": "Agent Pool",
+          "status": "TODO",
+          "priority": "P1",
+          "effort": "8h",
+          "dependencies": ["POOL-001"],
+          "week": 4
+        },
+        {
+          "id": "POOL-005",
+          "title": "Implement status tracking",
+          "category": "Agent Pool",
+          "status": "TODO",
+          "priority": "P0",
+          "effort": "4h",
+          "dependencies": ["POOL-001"],
+          "week": 4
+        },
+        {
+          "id": "INT-001",
+          "title": "Implement GitHub integration",
+          "category": "Integrations",
+          "status": "TODO",
+          "priority": "P0",
+          "effort": "8h",
+          "dependencies": [],
+          "week": 5
+        },
+        {
+          "id": "INT-002",
+          "title": "Add SendGrid email service",
+          "category": "Integrations",
+          "status": "TODO",
+          "priority": "P1",
+          "effort": "4h",
+          "dependencies": [],
+          "week": 5
+        },
+        {
+          "id": "INT-003",
+          "title": "Create S3 file storage service",
+          "category": "Integrations",
+          "status": "TODO",
+          "priority": "P1",
+          "effort": "6h",
+          "dependencies": [],
+          "week": 5
+        },
+        {
+          "id": "INT-004",
+          "title": "Implement deployment triggers",
+          "category": "Integrations",
+          "status": "TODO",
+          "priority": "P1",
+          "effort": "8h",
+          "dependencies": ["INT-001"],
+          "week": 5
+        },
+        {
+          "id": "INT-005",
+          "title": "Add Stripe payment processing",
+          "category": "Integrations",
+          "status": "TODO",
+          "priority": "P2",
+          "effort": "8h",
+          "dependencies": [],
+          "week": 5
+        },
+        {
+          "id": "RT-001",
+          "title": "Setup Socket.io server",
+          "category": "Real-time",
+          "status": "TODO",
+          "priority": "P1",
+          "effort": "4h",
+          "dependencies": [],
+          "week": 6
+        },
+        {
+          "id": "RT-002",
+          "title": "Implement project status updates",
+          "category": "Real-time",
+          "status": "TODO",
+          "priority": "P1",
+          "effort": "6h",
+          "dependencies": ["RT-001"],
+          "week": 6
+        },
+        {
+          "id": "RT-003",
+          "title": "Add agent status broadcasting",
+          "category": "Real-time",
+          "status": "TODO",
+          "priority": "P1",
+          "effort": "4h",
+          "dependencies": ["RT-001"],
+          "week": 6
+        },
+        {
+          "id": "RT-004",
+          "title": "Create activity feed component",
+          "category": "Real-time",
+          "status": "TODO",
+          "priority": "P1",
+          "effort": "6h",
+          "dependencies": ["RT-002", "RT-003"],
+          "week": 6
+        },
+        {
+          "id": "RT-005",
+          "title": "Enable client notifications",
+          "category": "Real-time",
+          "status": "TODO",
+          "priority": "P1",
+          "effort": "4h",
+          "dependencies": ["RT-001"],
+          "week": 6
+        },
+        {
+          "id": "INFRA-004",
+          "title": "Add Ollama to Docker setup",
+          "category": "Infrastructure",
+          "status": "TODO",
+          "priority": "P0",
+          "effort": "2h",
+          "dependencies": [],
+          "week": 7
+        },
+        {
+          "id": "INFRA-005",
+          "title": "Configure monitoring stack",
+          "category": "Infrastructure",
+          "status": "TODO",
+          "priority": "P1",
+          "effort": "6h",
+          "dependencies": [],
+          "week": 7
+        },
+        {
+          "id": "INFRA-006",
+          "title": "Implement health checks",
+          "category": "Infrastructure",
+          "status": "TODO",
+          "priority": "P1",
+          "effort": "4h",
+          "dependencies": [],
+          "week": 7
+        },
+        {
+          "id": "INFRA-007",
+          "title": "Create backup procedures",
+          "category": "Infrastructure",
+          "status": "TODO",
+          "priority": "P1",
+          "effort": "4h",
+          "dependencies": [],
+          "week": 7
+        },
+        {
+          "id": "INFRA-008",
+          "title": "Setup CI/CD pipeline",
+          "category": "Infrastructure",
+          "status": "TODO",
+          "priority": "P1",
+          "effort": "8h",
+          "dependencies": [],
+          "week": 7
+        },
+        {
+          "id": "TEST-001",
+          "title": "Create integration tests",
+          "category": "Testing",
+          "status": "TODO",
+          "priority": "P1",
+          "effort": "8h",
+          "dependencies": ["AGENT-002", "WF-004"],
+          "week": 8
+        },
+        {
+          "id": "TEST-002",
+          "title": "Add end-to-end tests",
+          "category": "Testing",
+          "status": "TODO",
+          "priority": "P1",
+          "effort": "8h",
+          "dependencies": ["TEST-001"],
+          "week": 8
+        },
+        {
+          "id": "TEST-003",
+          "title": "Performance optimization",
+          "category": "Testing",
+          "status": "TODO",
+          "priority": "P1",
+          "effort": "6h",
+          "dependencies": [],
+          "week": 8
+        },
+        {
+          "id": "TEST-004",
+          "title": "Security audit",
+          "category": "Testing",
+          "status": "TODO",
+          "priority": "P1",
+          "effort": "8h",
+          "dependencies": [],
+          "week": 8
+        },
+        {
+          "id": "TEST-005",
+          "title": "Load testing",
+          "category": "Testing",
+          "status": "TODO",
+          "priority": "P2",
+          "effort": "6h",
+          "dependencies": ["TEST-001"],
+          "week": 8
+        },
+        {
+          "id": "DEPLOY-001",
+          "title": "Production environment setup",
+          "category": "Deployment",
+          "status": "TODO",
+          "priority": "P1",
+          "effort": "8h",
+          "dependencies": ["INFRA-008"],
+          "week": 8
+        },
+        {
+          "id": "DEPLOY-002",
+          "title": "Domain and SSL configuration",
+          "category": "Deployment",
+          "status": "TODO",
+          "priority": "P1",
+          "effort": "4h",
+          "dependencies": ["DEPLOY-001"],
+          "week": 8
+        },
+        {
+          "id": "DEPLOY-003",
+          "title": "Production deployment",
+          "category": "Deployment",
+          "status": "TODO",
+          "priority": "P1",
+          "effort": "6h",
+          "dependencies": ["DEPLOY-002", "TEST-004"],
+          "week": 8
+        }
+      ]
+    },
+    "IN_PROGRESS": {
+      "count": 0,
+      "tasks": []
+    },
+    "BLOCKED": {
+      "count": 0,
+      "tasks": []
+    },
+    "BACKLOG": {
+      "count": 15,
+      "tasks": [
+        {
+          "id": "ADV-001",
+          "title": "Implement self-healing workflows",
+          "category": "Advanced Features",
+          "status": "BACKLOG",
+          "priority": "P3",
+          "effort": "40h"
+        },
+        {
+          "id": "ADV-002",
+          "title": "Add marketing automation",
+          "category": "Advanced Features",
+          "status": "BACKLOG",
+          "priority": "P3",
+          "effort": "40h"
+        },
+        {
+          "id": "ADV-003",
+          "title": "Build advanced analytics dashboard",
+          "category": "Advanced Features",
+          "status": "BACKLOG",
+          "priority": "P2",
+          "effort": "24h"
+        },
+        {
+          "id": "ADV-004",
+          "title": "Create voice interface",
+          "category": "Advanced Features",
+          "status": "BACKLOG",
+          "priority": "P3",
+          "effort": "32h"
+        },
+        {
+          "id": "ADV-005",
+          "title": "Implement blockchain audit trail",
+          "category": "Advanced Features",
+          "status": "BACKLOG",
+          "priority": "P3",
+          "effort": "40h"
+        },
+        {
+          "id": "SCALE-001",
+          "title": "Multi-region deployment",
+          "category": "Scaling",
+          "status": "BACKLOG",
+          "priority": "P3",
+          "effort": "40h"
+        },
+        {
+          "id": "SCALE-002",
+          "title": "Kubernetes orchestration",
+          "category": "Scaling",
+          "status": "BACKLOG",
+          "priority": "P3",
+          "effort": "40h"
+        },
+        {
+          "id": "SCALE-003",
+          "title": "Auto-scaling implementation",
+          "category": "Scaling",
+          "status": "BACKLOG",
+          "priority": "P2",
+          "effort": "24h"
+        },
+        {
+          "id": "ENT-001",
+          "title": "Enterprise SSO integration",
+          "category": "Enterprise",
+          "status": "BACKLOG",
+          "priority": "P3",
+          "effort": "24h"
+        },
+        {
+          "id": "ENT-002",
+          "title": "Advanced RBAC system",
+          "category": "Enterprise",
+          "status": "BACKLOG",
+          "priority": "P3",
+          "effort": "32h"
+        },
+        {
+          "id": "ENT-003",
+          "title": "Compliance reporting",
+          "category": "Enterprise",
+          "status": "BACKLOG",
+          "priority": "P3",
+          "effort": "24h"
+        },
+        {
+          "id": "ML-001",
+          "title": "Custom model training pipeline",
+          "category": "Machine Learning",
+          "status": "BACKLOG",
+          "priority": "P3",
+          "effort": "80h"
+        },
+        {
+          "id": "ML-002",
+          "title": "Model performance optimization",
+          "category": "Machine Learning",
+          "status": "BACKLOG",
+          "priority": "P3",
+          "effort": "40h"
+        },
+        {
+          "id": "ML-003",
+          "title": "A/B testing framework",
+          "category": "Machine Learning",
+          "status": "BACKLOG",
+          "priority": "P3",
+          "effort": "32h"
+        },
+        {
+          "id": "ML-004",
+          "title": "Reinforcement learning integration",
+          "category": "Machine Learning",
+          "status": "BACKLOG",
+          "priority": "P3",
+          "effort": "80h"
+        }
+      ]
+    }
+  },
+  "summary": {
+    "total_effort_hours": 750,
+    "completed_effort": 65,
+    "remaining_effort": 685,
+    "completion_percentage": 8.7,
+    "categories": {
+      "AI Core": 8,
+      "Agent System": 6,
+      "Workflow": 6,
+      "Agent Pool": 5,
+      "Integrations": 5,
+      "Real-time": 5,
+      "Infrastructure": 8,
+      "Testing": 5,
+      "Deployment": 3,
+      "Frontend": 4,
+      "Authentication": 3,
+      "Database": 4,
+      "API": 4,
+      "State Management": 3,
+      "Advanced Features": 5,
+      "Scaling": 3,
+      "Enterprise": 3,
+      "Machine Learning": 4
+    }
+  }
+}

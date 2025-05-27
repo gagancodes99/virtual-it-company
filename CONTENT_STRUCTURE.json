@@ -1,0 +1,177 @@
+{
+  "project_name": "Virtual IT Company Platform",
+  "version": "1.0",
+  "last_updated": "2025-05-27",
+  "content_structure": {
+    "1_project_concept_vision": {
+      "title": "Project Concept & Vision",
+      "sections": {
+        "1.1": {
+          "title": "Executive Summary",
+          "topics": [
+            "Platform overview",
+            "Business model",
+            "Value proposition",
+            "Target market"
+          ],
+          "source_files": ["PROJECT_MEMORY.md", "unified-autonomous-system.md"]
+        },
+        "1.2": {
+          "title": "Core Objectives",
+          "topics": [
+            "Autonomous operation goals",
+            "Revenue targets",
+            "Scalability vision",
+            "Market positioning"
+          ],
+          "source_files": ["chat.md", "unified-autonomous-system.md"]
+        },
+        "1.3": {
+          "title": "Key Benefits",
+          "topics": [
+            "24/7 operation capability",
+            "Cost efficiency",
+            "Quality assurance",
+            "Client satisfaction"
+          ],
+          "source_files": ["agent-sdk-architecture.md", "chat.md"]
+        }
+      }
+    },
+    "2_technical_architecture": {
+      "title": "Technical Architecture",
+      "sections": {
+        "2.1": {
+          "title": "System Architecture Overview",
+          "topics": [
+            "Layered architecture design",
+            "Component relationships",
+            "Data flow patterns",
+            "Integration points"
+          ],
+          "source_files": ["agent-sdk-architecture.md", "langgraph-multi-llm-implementation.md"]
+        },
+        "2.2": {
+          "title": "AI Agent Architecture",
+          "topics": [
+            "Agent SDK selection",
+            "Multi-agent orchestration",
+            "Agent communication protocols",
+            "Task distribution"
+          ],
+          "source_files": ["agent-sdk-architecture.md", "langgraph-multi-llm-implementation.md"]
+        },
+        "2.3": {
+          "title": "Multi-LLM Strategy",
+          "topics": [
+            "LLM router design",
+            "Cost optimization algorithms",
+            "Model selection criteria",
+            "Fallback mechanisms"
+          ],
+          "source_files": ["langgraph-multi-llm-implementation.md"]
+        },
+        "2.4": {
+          "title": "Infrastructure Design",
+          "topics": [
+            "Container architecture",
+            "Database design",
+            "Queue management",
+            "Storage strategy"
+          ],
+          "source_files": ["unified-autonomous-system.md", "langgraph-multi-llm-implementation.md"]
+        }
+      }
+    },
+    "3_implementation_details": {
+      "title": "Implementation Details",
+      "sections": {
+        "3.1": {
+          "title": "Core Services Implementation",
+          "topics": [
+            "LangGraph workflow engine",
+            "Agent service implementations",
+            "n8n workflow templates",
+            "API endpoints"
+          ],
+          "source_files": ["langgraph-multi-llm-implementation.md", "unified-autonomous-system.md"]
+        },
+        "3.2": {
+          "title": "Agent Development",
+          "topics": [
+            "Planner agent logic",
+            "Developer agent implementation",
+            "Tester agent workflows",
+            "DevOps automation"
+          ],
+          "source_files": ["unified-autonomous-system.md", "chat.md"]
+        },
+        "3.3": {
+          "title": "Client Interface",
+          "topics": [
+            "Dashboard components",
+            "Real-time updates",
+            "Progress tracking",
+            "Feedback systems"
+          ],
+          "source_files": ["chat.md", "langgraph-multi-llm-implementation.md"]
+        },
+        "3.4": {
+          "title": "Business Logic",
+          "topics": [
+            "Project routing",
+            "Revenue optimization",
+            "Cost tracking",
+            "Analytics implementation"
+          ],
+          "source_files": ["chat.md"]
+        }
+      }
+    },
+    "4_deployment_operations": {
+      "title": "Deployment & Operations",
+      "sections": {
+        "4.1": {
+          "title": "Deployment Options",
+          "topics": [
+            "Local deployment setup",
+            "Hybrid cloud deployment",
+            "Full cloud deployment",
+            "Environment configuration"
+          ],
+          "source_files": ["unified-autonomous-system.md", "langgraph-multi-llm-implementation.md"]
+        },
+        "4.2": {
+          "title": "Operational Procedures",
+          "topics": [
+            "Monitoring setup",
+            "Error handling",
+            "Backup strategies",
+            "Scaling procedures"
+          ],
+          "source_files": ["chat.md", "langgraph-multi-llm-implementation.md"]
+        },
+        "4.3": {
+          "title": "Cost Management",
+          "topics": [
+            "Cost tiers breakdown",
+            "Budget allocation",
+            "Usage monitoring",
+            "Optimization strategies"
+          ],
+          "source_files": ["agent-sdk-architecture.md", "langgraph-multi-llm-implementation.md"]
+        },
+        "4.4": {
+          "title": "Performance & Scaling",
+          "topics": [
+            "Performance metrics",
+            "Capacity planning",
+            "Horizontal scaling",
+            "Load balancing"
+          ],
+          "source_files": ["langgraph-multi-llm-implementation.md", "chat.md"]
+        }
+      }
+    }
+  }
+}

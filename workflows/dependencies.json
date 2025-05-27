@@ -1,0 +1,468 @@
+{
+  "project": "Virtual IT Company Platform",
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "START",
+        "type": "milestone",
+        "name": "Project Start",
+        "dependencies": []
+      },
+      {
+        "id": "AI-001",
+        "type": "task",
+        "name": "Create LLM client interface",
+        "dependencies": ["START"],
+        "blocks": ["AI-002", "AI-003", "AI-004", "AI-007"]
+      },
+      {
+        "id": "AI-002",
+        "type": "task",
+        "name": "Implement Ollama integration",
+        "dependencies": ["AI-001"],
+        "blocks": ["AI-005", "INFRA-004"]
+      },
+      {
+        "id": "AI-003",
+        "type": "task",
+        "name": "Add OpenAI client",
+        "dependencies": ["AI-001"],
+        "blocks": ["AI-005"]
+      },
+      {
+        "id": "AI-004",
+        "type": "task",
+        "name": "Add Anthropic Claude client",
+        "dependencies": ["AI-001"],
+        "blocks": ["AI-005"]
+      },
+      {
+        "id": "AI-005",
+        "type": "task",
+        "name": "Build multi-LLM router",
+        "dependencies": ["AI-002", "AI-003", "AI-004"],
+        "blocks": ["AI-006", "AGENT-001"]
+      },
+      {
+        "id": "AI-006",
+        "type": "task",
+        "name": "Implement cost tracking",
+        "dependencies": ["AI-005"],
+        "blocks": ["ADV-003"]
+      },
+      {
+        "id": "AI-007",
+        "type": "task",
+        "name": "Create prompt template system",
+        "dependencies": ["AI-001"],
+        "blocks": ["AGENT-001"]
+      },
+      {
+        "id": "AGENT-001",
+        "type": "task",
+        "name": "Create base agent executor",
+        "dependencies": ["AI-005", "AI-007"],
+        "blocks": ["AGENT-002", "AGENT-003", "AGENT-004", "POOL-001"]
+      },
+      {
+        "id": "AGENT-002",
+        "type": "task",
+        "name": "Implement task processing",
+        "dependencies": ["AGENT-001"],
+        "blocks": ["AGENT-005", "AGENT-006", "TEST-001"]
+      },
+      {
+        "id": "AGENT-003",
+        "type": "task",
+        "name": "Build agent-DB mapping",
+        "dependencies": ["AGENT-001"],
+        "blocks": ["POOL-005"]
+      },
+      {
+        "id": "AGENT-004",
+        "type": "task",
+        "name": "Create specialized agents",
+        "dependencies": ["AGENT-001"],
+        "blocks": ["POOL-002"]
+      },
+      {
+        "id": "AGENT-005",
+        "type": "task",
+        "name": "Error handling and retry",
+        "dependencies": ["AGENT-002"],
+        "blocks": ["ADV-001"]
+      },
+      {
+        "id": "AGENT-006",
+        "type": "task",
+        "name": "Performance monitoring",
+        "dependencies": ["AGENT-002"],
+        "blocks": ["INFRA-005"]
+      },
+      {
+        "id": "WF-001",
+        "type": "task",
+        "name": "Add n8n to Docker",
+        "dependencies": ["START"],
+        "blocks": ["WF-002"]
+      },
+      {
+        "id": "WF-002",
+        "type": "task",
+        "name": "Create webhook endpoints",
+        "dependencies": ["WF-001"],
+        "blocks": ["WF-006"]
+      },
+      {
+        "id": "WF-003",
+        "type": "task",
+        "name": "Setup LangGraph",
+        "dependencies": ["START"],
+        "blocks": ["WF-004"]
+      },
+      {
+        "id": "WF-004",
+        "type": "task",
+        "name": "Project state machine",
+        "dependencies": ["WF-003"],
+        "blocks": ["WF-006", "TEST-001"]
+      },
+      {
+        "id": "WF-005",
+        "type": "task",
+        "name": "Create Redis task queue",
+        "dependencies": ["START"],
+        "blocks": ["POOL-002"]
+      },
+      {
+        "id": "WF-006",
+        "type": "task",
+        "name": "Build workflow templates",
+        "dependencies": ["WF-002", "WF-004"],
+        "blocks": []
+      },
+      {
+        "id": "POOL-001",
+        "type": "task",
+        "name": "Create agent pool manager",
+        "dependencies": ["AGENT-001"],
+        "blocks": ["POOL-002", "POOL-003", "POOL-004", "POOL-005"]
+      },
+      {
+        "id": "POOL-002",
+        "type": "task",
+        "name": "Task distribution logic",
+        "dependencies": ["POOL-001", "WF-005", "AGENT-004"],
+        "blocks": ["POOL-003"]
+      },
+      {
+        "id": "POOL-003",
+        "type": "task",
+        "name": "Workload balancing",
+        "dependencies": ["POOL-002"],
+        "blocks": ["SCALE-003"]
+      },
+      {
+        "id": "POOL-004",
+        "type": "task",
+        "name": "Inter-agent communication",
+        "dependencies": ["POOL-001"],
+        "blocks": ["RT-003"]
+      },
+      {
+        "id": "POOL-005",
+        "type": "task",
+        "name": "Status tracking",
+        "dependencies": ["POOL-001", "AGENT-003"],
+        "blocks": ["RT-002", "RT-003"]
+      },
+      {
+        "id": "INT-001",
+        "type": "task",
+        "name": "GitHub integration",
+        "dependencies": ["START"],
+        "blocks": ["INT-004"]
+      },
+      {
+        "id": "INT-002",
+        "type": "task",
+        "name": "SendGrid email service",
+        "dependencies": ["START"],
+        "blocks": ["RT-005"]
+      },
+      {
+        "id": "INT-003",
+        "type": "task",
+        "name": "S3 file storage",
+        "dependencies": ["START"],
+        "blocks": []
+      },
+      {
+        "id": "INT-004",
+        "type": "task",
+        "name": "Deployment triggers",
+        "dependencies": ["INT-001"],
+        "blocks": ["DEPLOY-003"]
+      },
+      {
+        "id": "INT-005",
+        "type": "task",
+        "name": "Stripe payment",
+        "dependencies": ["START"],
+        "blocks": []
+      },
+      {
+        "id": "RT-001",
+        "type": "task",
+        "name": "Socket.io server",
+        "dependencies": ["START"],
+        "blocks": ["RT-002", "RT-003", "RT-004", "RT-005"]
+      },
+      {
+        "id": "RT-002",
+        "type": "task",
+        "name": "Project status updates",
+        "dependencies": ["RT-001", "POOL-005"],
+        "blocks": ["RT-004"]
+      },
+      {
+        "id": "RT-003",
+        "type": "task",
+        "name": "Agent status broadcasting",
+        "dependencies": ["RT-001", "POOL-005", "POOL-004"],
+        "blocks": ["RT-004"]
+      },
+      {
+        "id": "RT-004",
+        "type": "task",
+        "name": "Activity feed",
+        "dependencies": ["RT-002", "RT-003"],
+        "blocks": []
+      },
+      {
+        "id": "RT-005",
+        "type": "task",
+        "name": "Client notifications",
+        "dependencies": ["RT-001", "INT-002"],
+        "blocks": []
+      },
+      {
+        "id": "INFRA-004",
+        "type": "task",
+        "name": "Add Ollama to Docker",
+        "dependencies": ["AI-002"],
+        "blocks": []
+      },
+      {
+        "id": "INFRA-005",
+        "type": "task",
+        "name": "Monitoring stack",
+        "dependencies": ["AGENT-006"],
+        "blocks": []
+      },
+      {
+        "id": "INFRA-006",
+        "type": "task",
+        "name": "Health checks",
+        "dependencies": ["START"],
+        "blocks": ["INFRA-008"]
+      },
+      {
+        "id": "INFRA-007",
+        "type": "task",
+        "name": "Backup procedures",
+        "dependencies": ["START"],
+        "blocks": []
+      },
+      {
+        "id": "INFRA-008",
+        "type": "task",
+        "name": "CI/CD pipeline",
+        "dependencies": ["INFRA-006"],
+        "blocks": ["DEPLOY-001"]
+      },
+      {
+        "id": "TEST-001",
+        "type": "task",
+        "name": "Integration tests",
+        "dependencies": ["AGENT-002", "WF-004"],
+        "blocks": ["TEST-002"]
+      },
+      {
+        "id": "TEST-002",
+        "type": "task",
+        "name": "End-to-end tests",
+        "dependencies": ["TEST-001"],
+        "blocks": ["TEST-005"]
+      },
+      {
+        "id": "TEST-003",
+        "type": "task",
+        "name": "Performance optimization",
+        "dependencies": ["START"],
+        "blocks": []
+      },
+      {
+        "id": "TEST-004",
+        "type": "task",
+        "name": "Security audit",
+        "dependencies": ["START"],
+        "blocks": ["DEPLOY-003"]
+      },
+      {
+        "id": "TEST-005",
+        "type": "task",
+        "name": "Load testing",
+        "dependencies": ["TEST-002"],
+        "blocks": []
+      },
+      {
+        "id": "DEPLOY-001",
+        "type": "task",
+        "name": "Production setup",
+        "dependencies": ["INFRA-008"],
+        "blocks": ["DEPLOY-002"]
+      },
+      {
+        "id": "DEPLOY-002",
+        "type": "task",
+        "name": "Domain/SSL config",
+        "dependencies": ["DEPLOY-001"],
+        "blocks": ["DEPLOY-003"]
+      },
+      {
+        "id": "DEPLOY-003",
+        "type": "task",
+        "name": "Production deployment",
+        "dependencies": ["DEPLOY-002", "TEST-004", "INT-004"],
+        "blocks": ["MVP"]
+      },
+      {
+        "id": "MVP",
+        "type": "milestone",
+        "name": "MVP Complete",
+        "dependencies": ["DEPLOY-003"]
+      }
+    ]
+  },
+  "critical_paths": [
+    {
+      "name": "AI Foundation Path",
+      "description": "Core AI functionality that everything depends on",
+      "path": ["START", "AI-001", "AI-002", "AI-005", "AGENT-001", "AGENT-002"],
+      "total_effort": "36h",
+      "risk": "HIGH"
+    },
+    {
+      "name": "Workflow Orchestration Path",
+      "description": "Project workflow management system",
+      "path": ["START", "WF-003", "WF-004", "WF-006"],
+      "total_effort": "24h",
+      "risk": "MEDIUM"
+    },
+    {
+      "name": "Agent Coordination Path",
+      "description": "Multi-agent task distribution",
+      "path": ["AGENT-001", "POOL-001", "POOL-002"],
+      "total_effort": "20h",
+      "risk": "MEDIUM"
+    },
+    {
+      "name": "Deployment Path",
+      "description": "Production deployment pipeline",
+      "path": ["INFRA-006", "INFRA-008", "DEPLOY-001", "DEPLOY-002", "DEPLOY-003"],
+      "total_effort": "26h",
+      "risk": "LOW"
+    }
+  ],
+  "parallel_tracks": [
+    {
+      "name": "Infrastructure Track",
+      "description": "Can be done in parallel with AI development",
+      "tasks": ["WF-001", "WF-005", "INT-001", "INT-002", "INT-003", "RT-001", "INFRA-006", "INFRA-007"],
+      "can_start": "immediately"
+    },
+    {
+      "name": "Testing Track",
+      "description": "Can start once core components ready",
+      "tasks": ["TEST-003", "TEST-004"],
+      "can_start": "week 7"
+    }
+  ],
+  "blocking_analysis": {
+    "major_blockers": [
+      {
+        "task": "AI-001",
+        "blocks_count": 4,
+        "blocks": ["AI-002", "AI-003", "AI-004", "AI-007"],
+        "impact": "CRITICAL - Nothing can proceed without this"
+      },
+      {
+        "task": "AI-005",
+        "blocks_count": 2,
+        "blocks": ["AI-006", "AGENT-001"],
+        "impact": "CRITICAL - Agent system depends on this"
+      },
+      {
+        "task": "AGENT-001",
+        "blocks_count": 4,
+        "blocks": ["AGENT-002", "AGENT-003", "AGENT-004", "POOL-001"],
+        "impact": "HIGH - All agent functionality blocked"
+      },
+      {
+        "task": "POOL-001",
+        "blocks_count": 4,
+        "blocks": ["POOL-002", "POOL-003", "POOL-004", "POOL-005"],
+        "impact": "HIGH - Multi-agent coordination blocked"
+      },
+      {
+        "task": "RT-001",
+        "blocks_count": 4,
+        "blocks": ["RT-002", "RT-003", "RT-004", "RT-005"],
+        "impact": "MEDIUM - All real-time features blocked"
+      }
+    ],
+    "dependency_chains": [
+      {
+        "chain": "AI Development",
+        "length": 6,
+        "tasks": ["AI-001", "AI-002/003/004", "AI-005", "AGENT-001", "AGENT-002", "AGENT-005"],
+        "total_effort": "44h"
+      },
+      {
+        "chain": "Workflow Development",
+        "length": 4,
+        "tasks": ["WF-003", "WF-004", "WF-002", "WF-006"],
+        "total_effort": "28h"
+      }
+    ]
+  },
+  "risk_mitigation": {
+    "high_risk_dependencies": [
+      {
+        "dependency": "AI-001 → Multiple",
+        "risk": "Single point of failure for all AI",
+        "mitigation": "Start immediately, allocate best resources"
+      },
+      {
+        "dependency": "External APIs",
+        "risk": "API keys and service availability",
+        "mitigation": "Start with Ollama (local), add cloud later"
+      },
+      {
+        "dependency": "WF-003 → WF-004",
+        "risk": "Complex LangGraph integration",
+        "mitigation": "Create simple state machine first"
+      }
+    ],
+    "recommended_order": [
+      "1. Start AI-001 immediately (blocks everything)",
+      "2. Parallel: WF-001, WF-003, INT-001, INT-002 (no dependencies)",
+      "3. Complete AI track before starting AGENT track",
+      "4. Begin POOL track once AGENT-001 complete",
+      "5. RT track can start anytime (independent)",
+      "6. Testing begins week 7-8",
+      "7. Deployment only after core features tested"
+    ]
+  }
+}
