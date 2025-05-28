@@ -1,7 +1,6 @@
 'use client';
 
 import { Progress } from '@/components/ui/progress';
-import { Badge } from '@/components/ui/badge';
 import { 
   CheckCircle2, 
   Circle, 

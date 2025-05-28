@@ -1,11 +1,10 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { IAIAgent } from "@/lib/database/models/AIAgent";
-import { AgentStatus } from "@/types";
+import { IAIAgent } from "@/infrastructure/database/models/AIAgent";
+import { AgentStatus } from "@/shared/types";
 import { 
   Bot, 
   Star, 
@@ -23,7 +22,7 @@ import {
   DropdownMenuTrigger,
   DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/utils";
 
 interface AgentCardProps {
   agent: IAIAgent;

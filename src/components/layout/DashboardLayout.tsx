@@ -2,8 +2,8 @@
 
 import { Sidebar } from "./Sidebar";
 import { Header } from "./Header";
-import { useUIStore } from "@/stores/useUIStore";
-import { cn } from "@/lib/utils";
+import { useUIStore } from "@/shared/stores/useUIStore";
+import { cn } from "@/shared/utils";
 
 interface DashboardLayoutProps {
   children: React.ReactNode;

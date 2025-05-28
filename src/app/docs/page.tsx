@@ -5,9 +5,8 @@ import DocNavigation from '@/components/docs/DocNavigation';
 import ProjectProgress from '@/components/docs/ProjectProgress';
 import TaskStatus from '@/components/docs/TaskStatus';
 import { Card } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
-import { Search, Book, Target, Clock, CheckCircle2 } from 'lucide-react';
+import { Search, Book, Target, CheckCircle2 } from 'lucide-react';
 
 interface DocSection {
   id: string;

@@ -1,10 +1,9 @@
 "use client";
 
-import { cn } from "@/lib/utils";
+import { cn } from "@/shared/utils";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { useUIStore } from "@/stores/useUIStore";
-import { useAuthStore } from "@/stores/useAuthStore";
+import { useUIStore } from "@/shared/stores/useUIStore";
+import { useAuthStore } from "@/shared/stores/useAuthStore";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {

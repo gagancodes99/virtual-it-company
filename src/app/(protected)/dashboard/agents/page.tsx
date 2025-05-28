@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
 import {
   Select,
   SelectContent,
@@ -13,10 +12,9 @@ import {
 } from "@/components/ui/select";
 import { AgentCard } from "@/components/agents/AgentCard";
 import { CreateAgentDialog } from "@/components/agents/CreateAgentDialog";
-import { trpc } from "@/lib/trpc/client";
-import { useUIStore } from "@/stores/useUIStore";
-import { Plus, Search, Filter } from "lucide-react";
-import { AgentStatus } from "@/types";
+import { useUIStore } from "@/shared/stores/useUIStore";
+import { Plus, Search } from "lucide-react";
+import { AgentStatus } from "@/shared/types";
 
 export default function AgentsPage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -24,7 +22,7 @@ export default function AgentsPage() {
   const { addNotification } = useUIStore();
 
   // Get agents - this would be real data in implementation
-  const { data: agents = [], refetch } = trpc.agent.getAll.useQuery();
+    // const { data: agents = [], refetch } = trpc.agent.getAll.useQuery();
   
   const updateAgentStatus = trpc.agent.updateStatus.useMutation({
     onSuccess: () => {

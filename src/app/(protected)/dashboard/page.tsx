@@ -1,10 +1,8 @@
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { useAuthStore } from "@/stores/useAuthStore";
-import { trpc } from "@/lib/trpc/client";
+import { useAuthStore } from "@/shared/stores/useAuthStore";
 import {
   FolderOpen,
   Users,

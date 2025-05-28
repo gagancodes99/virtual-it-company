@@ -2,7 +2,7 @@
 
 import { SessionProvider } from "next-auth/react";
 import { useSession } from "next-auth/react";
-import { useAuthStore } from "@/stores/useAuthStore";
+import { useAuthStore } from "@/shared/stores/useAuthStore";
 import { useEffect } from "react";
 
 function AuthSync({ children }: { children: React.ReactNode }) {

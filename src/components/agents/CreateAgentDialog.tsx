@@ -23,9 +23,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Badge } from "@/components/ui/badge";
-import { trpc } from "@/lib/trpc/client";
-import { useUIStore } from "@/stores/useUIStore";
+import { useUIStore } from "@/shared/stores/useUIStore";
 import { Plus, X } from "lucide-react";
 
 const agentSchema = z.object({

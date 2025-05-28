@@ -51,6 +51,99 @@ services:
     volumes:
       - ./uploads:/app/uploads
 
+  # Ollama AI Models Service
+  ollama:
+    image: ollama/ollama:latest
+    container_name: virtual-it-ollama
+    restart: unless-stopped
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    environment:
+      - OLLAMA_ORIGINS=*
+      - OLLAMA_HOST=0.0.0.0
+    networks:
+      - virtual-it-network
+    profiles:
+      - development
+      - ai
+
+  # n8n Workflow Automation
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: virtual-it-n8n
+    restart: unless-stopped
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=${N8N_USER:-admin}
+      - N8N_BASIC_AUTH_PASSWORD=${N8N_PASSWORD:-password123}
+      - N8N_HOST=localhost
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - DB_TYPE=postgresdb
+      - DB_POSTGRESDB_HOST=postgres-n8n
+      - DB_POSTGRESDB_PORT=5432
+      - DB_POSTGRESDB_DATABASE=n8n
+      - DB_POSTGRESDB_USER=n8n
+      - DB_POSTGRESDB_PASSWORD=n8n123
+      - N8N_WEBHOOK_URL=http://localhost:5678/
+      - WEBHOOK_URL=http://localhost:5678/
+    volumes:
+      - n8n_data:/home/node/.n8n
+    depends_on:
+      - postgres-n8n
+      - redis
+    networks:
+      - virtual-it-network
+    profiles:
+      - development
+      - workflows
+
+  # PostgreSQL for n8n
+  postgres-n8n:
+    image: postgres:15-alpine
+    container_name: virtual-it-postgres-n8n
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: n8n
+      POSTGRES_USER: n8n
+      POSTGRES_PASSWORD: n8n123
+    volumes:
+      - postgres_n8n_data:/var/lib/postgresql/data
+    networks:
+      - virtual-it-network
+    profiles:
+      - development
+      - workflows
+
+  # LangGraph Service
+  langgraph:
+    build:
+      context: ./langgraph-service
+      dockerfile: Dockerfile
+    container_name: virtual-it-langgraph
+    restart: unless-stopped
+    ports:
+      - "8001:8001"
+    environment:
+      - REDIS_URL=redis://redis:6379
+      - MONGODB_URI=mongodb://admin:password123@mongodb:27017/virtual-it-company?authSource=admin
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - OLLAMA_HOST=http://ollama:11434
+    depends_on:
+      - mongodb
+      - redis
+      - ollama
+    networks:
+      - virtual-it-network
+    profiles:
+      - development
+      - ai
+
   # Nginx Reverse Proxy (optional, for production)
   nginx:
     image: nginx:alpine
@@ -72,6 +165,9 @@ services:
 volumes:
   mongodb_data:
   redis_data:
+  ollama_data:
+  n8n_data:
+  postgres_n8n_data:
 
 networks:
   virtual-it-network:

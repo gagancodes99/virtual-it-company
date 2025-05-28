@@ -1,8 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { useUIStore } from "@/stores/useUIStore";
+import { useUIStore } from "@/shared/stores/useUIStore";
 import { Menu, Bell, Search } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import {
